@@ -86,12 +86,8 @@ app.put("/api/persons/:id", (req, res) => {
 
 app.delete("/api/persons/:id", (req, res) => {
   const id = req.params.id;
-
-  const foundPerson = persons.find((person) => person.id === id);
-
   persons = persons.filter((person) => person.id !== id);
-
-  res.status(204).json(foundPerson);
+  res.status(204).end();
 });
 
 app.get("/info", (req, res) => {
