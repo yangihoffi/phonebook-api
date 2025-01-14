@@ -10,8 +10,8 @@ const connectToDatabase = async () => {
       console.log("connected to mongodb");
     });
   } catch (error) {
-    console.log(error);
+    console.log(`can't connect to mongodb, error: ${error}`);
   }
 };
 
-export default connectToDatabase;
+module.exports = connectToDatabase;

@@ -1,7 +1,9 @@
 require("dotenv").config();
 const express = require("express");
-const app = express();
 const { v4: uuidv4 } = require("uuid");
+const connectToDatabase = require("./database/db");
+
+const app = express();
 
 const PORT = process.env.PORT;
 
@@ -27,6 +29,8 @@ let persons = [
     number: "39-23-6423122",
   },
 ];
+
+connectToDatabase();
 
 app.use(express.json());
 
